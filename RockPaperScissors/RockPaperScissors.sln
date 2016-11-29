@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.WebApi", "RockPaperScissors.WebApi\RockPaperScissors.WebApi.csproj", "{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.WebApi.Tests", "RockPaperScissors.WebApi.Tests\RockPaperScissors.WebApi.Tests.csproj", "{E8413B91-38F5-4B56-AB82-AB1CF3C09669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.StaticValues", "RockPaperScissors.StaticValues\RockPaperScissors.StaticValues.csproj", "{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8413B91-38F5-4B56-AB82-AB1CF3C09669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8413B91-38F5-4B56-AB82-AB1CF3C09669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8413B91-38F5-4B56-AB82-AB1CF3C09669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8413B91-38F5-4B56-AB82-AB1CF3C09669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
