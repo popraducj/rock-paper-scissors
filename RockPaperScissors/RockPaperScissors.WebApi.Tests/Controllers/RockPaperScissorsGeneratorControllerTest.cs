@@ -21,9 +21,9 @@ namespace RockPaperScissors.WebApi.Tests.Controllers
         }
 
         [TestMethod]
-        public void GetRandomPreference()
+        public void Get()
         {
-            var choise = _controller.GetRandomPreference();
+            var choise = _controller.Get();
             Assert.IsTrue(Enum.IsDefined(typeof(Possibilities), choise), "The result is not for rock paper scissors game");
 
         }
