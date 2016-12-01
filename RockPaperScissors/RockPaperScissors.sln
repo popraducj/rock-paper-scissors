@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.WebApi.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.StaticValues", "RockPaperScissors.StaticValues\RockPaperScissors.StaticValues.csproj", "{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.Web", "RockPaperScissors.Web\RockPaperScissors.Web.csproj", "{920072C9-6C7B-4626-9BBE-F2BD316C50C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using RockPaperScissors.StaticValues;
 using System;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace RockPaperScissors.WebApi.Controllers
 {
@@ -8,7 +9,7 @@ namespace RockPaperScissors.WebApi.Controllers
     public class RockPaperScissorsGeneratorController : ApiController
     {
         //
-        // GET: /GetRandomPreference
+        // GET: /Get
         public Possibilities Get()
         {
             var randomPosibility = new Random().Next(3);
