@@ -2,8 +2,8 @@
 
 angular.module('app.services')
    .factory('generatorService', ['$http', '$q', function ($http, $q) {
-       var dataFactory = {};
-       dataFactory.get = function () {
+       var generatorService = {};
+       generatorService.get = function () {
            var deferred = $q.defer();
 
            $http({
@@ -16,5 +16,5 @@ angular.module('app.services')
            });
            return deferred.promise;
        };
-       return dataFactory;
+       return generatorService;
    }]);
