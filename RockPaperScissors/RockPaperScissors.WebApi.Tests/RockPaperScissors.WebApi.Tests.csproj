@@ -95,7 +95,7 @@
     <Reference Include="System.Net.Http.WebRequest" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\RockPaperScissorsGeneratorControllerTest.cs" />
+    <Compile Include="Controllers\GameControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -105,9 +105,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RockPaperScissors.StaticValues\RockPaperScissors.StaticValues.csproj">
+    <ProjectReference Include="..\RockPaperScissors.StaticValues\RockPaperScissors.BL.csproj">
       <Project>{71c5fc0e-8634-4fbb-9fd3-689335eaee5f}</Project>
-      <Name>RockPaperScissors.StaticValues</Name>
+      <Name>RockPaperScissors.BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\RockPaperScissors.WebApi\RockPaperScissors.WebApi.csproj">
       <Project>{F91975B3-8BB0-4861-A5D7-D8CB35FE5DF5}</Project>

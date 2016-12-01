@@ -1000,7 +1000,7 @@
     <Content Include="Scripts\services.spec.js">
       <DependentUpon>services.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\Services\GeneratorService.js" />
+    <Content Include="Scripts\Services\GameService.js" />
     <Content Include="Scripts\vendor\angular-csp.css" />
     <Content Include="Scripts\vendor\angular-ui-router.js" />
     <Content Include="Scripts\vendor\angular-ui-router.min.js" />

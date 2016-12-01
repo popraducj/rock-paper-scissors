@@ -163,8 +163,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RockPaperScissorsGeneratorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -244,9 +244,9 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RockPaperScissors.StaticValues\RockPaperScissors.StaticValues.csproj">
+    <ProjectReference Include="..\RockPaperScissors.StaticValues\RockPaperScissors.BL.csproj">
       <Project>{71c5fc0e-8634-4fbb-9fd3-689335eaee5f}</Project>
-      <Name>RockPaperScissors.StaticValues</Name>
+      <Name>RockPaperScissors.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.WebApi", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.WebApi.Tests", "RockPaperScissors.WebApi.Tests\RockPaperScissors.WebApi.Tests.csproj", "{E8413B91-38F5-4B56-AB82-AB1CF3C09669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.StaticValues", "RockPaperScissors.StaticValues\RockPaperScissors.StaticValues.csproj", "{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.BL", "RockPaperScissors.StaticValues\RockPaperScissors.BL.csproj", "{71C5FC0E-8634-4FBB-9FD3-689335EAEE5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.Web", "RockPaperScissors.Web\RockPaperScissors.Web.csproj", "{920072C9-6C7B-4626-9BBE-F2BD316C50C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors.BL.Tests", "RockPaperScissors.BL.Tests\RockPaperScissors.BL.Tests.csproj", "{A06C895F-EAB7-48C8-8DF1-4D09D64EE034}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{920072C9-6C7B-4626-9BBE-F2BD316C50C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A06C895F-EAB7-48C8-8DF1-4D09D64EE034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A06C895F-EAB7-48C8-8DF1-4D09D64EE034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A06C895F-EAB7-48C8-8DF1-4D09D64EE034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A06C895F-EAB7-48C8-8DF1-4D09D64EE034}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace RockPaperScissors.StaticValues
+namespace RockPaperScissors.BL
 {
-    [Flags]
+    
     [Serializable]
-    public enum Possibilities
+    public enum WeaponType
     {
         Rock,
         Paper,

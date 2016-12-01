@@ -59,4 +59,5 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
             // based on which page the user is located
             $rootScope.layout = toState.layout;
         });
-    }]);
+    }])
+    .value('baseUrl', 'http://api.rock-paper-scissors.org/api/');

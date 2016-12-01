@@ -28,8 +28,7 @@ namespace App.RockPaperScissors.Web
                 "~/scripts/controllers.js",
                 "~/scripts/app.js",
                 //Services
-                "~/scripts/Services/GeneratorService.js",
-
+                "~/scripts/Services/GameService.js",
 
                 //Controllers
                 "~/scripts/Controllers/AboutController.js",
