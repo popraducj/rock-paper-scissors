@@ -12,7 +12,7 @@ namespace RockPaperScissors.WebApi.Controllers
         //
         // GET: /Get
         [HttpGet]
-        public HttpResponseMessage battle(WeaponType selection, string gameRule = "rock-paper-scissors-invers")
+        public HttpResponseMessage battle(WeaponType selection, string gameRule = "rock-paper-scissors")
         {
             var weaponTypeLength = Enum.GetNames(typeof(WeaponType)).Length;
             if ((int)selection > weaponTypeLength)
