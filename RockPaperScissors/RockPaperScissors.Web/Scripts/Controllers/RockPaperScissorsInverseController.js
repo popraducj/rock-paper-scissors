@@ -6,12 +6,12 @@
 angular.module('app.controllers')
 
     // Path: /
-    .controller('HomeController', ['$scope', '$location', '$window', 'gameService', function ($scope, $location, $window, GameService) {
-        $scope.$root.title = 'Rock Paper Scissors';
+    .controller('RockPaperScissorsInverseController', ['$scope', '$location', '$window', 'gameService', function ($scope, $location, $window, GameService) {
+        $scope.$root.title = 'Rock Paper Scissors Inverse';
         $scope.fight = function () {
             $scope.isLoading = true;
             $scope.result = {};
-            GameService.get($scope.weapon, "rock-paper-scissors").then(function (response) {
+            GameService.get($scope.weapon, "rock-paper-scissors-inverse").then(function (response) {
                 $scope.result = response;
                 $("html, body").animate({ scrollTop: $(document).height() }, 2000);
                 $scope.isLoading = false;

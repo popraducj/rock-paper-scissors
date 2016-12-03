@@ -2,7 +2,10 @@
 
 
 angular.module('app.controllers', []);
-angular.module('app.services', []);
+angular.module('app.services', [])
+    .value('battleWeapons', { 0: 'rock', 1: 'paper', 2: 'scissors' })
+    .value('battleResult', {0 : 'win', 1:'draw', 2: 'lose'})
+    .value('apiBattleResultMessage', { 0: 'You have WON, now I have another strategy in mind. Double or nothing?', 1: "This for now is a DRAW. Let's try another.", 2: 'Unfortunately you lost but I am sure you will be better next time. Game?' });
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
 angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
 
@@ -18,6 +21,12 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
                 url: '/',
                 templateUrl: '/views/index',
                 controller: 'HomeController'
+
+            })
+            .state('inverseGame', {
+                url: '/rock-paper-scissors-inverse-game',
+                templateUrl: '/views/RockPaperScissorsInverse',
+                controller: 'RockPaperScissorsInverseController'
 
             })
             .state('about', {

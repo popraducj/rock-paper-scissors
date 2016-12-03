@@ -1,0 +1,24 @@
+﻿@media(max-width: 767px){
+    .logo{
+        height:40vh;
+    }
+    .enemyWeapon,
+    .weapon{
+        width:70px;
+        height:70px;
+    }
+    .weaponsWrapper{
+        width:221px;        
+    }
+    .footerLink{
+        float:left;
+    }
+
+    #loader {
+      margin: 10px 0 10px -40px;
+      left:57%;
+    }
+    .enemyCenter{
+        width:70px;
+    }
+}

@@ -1,0 +1,142 @@
+﻿
+.banner{
+    background-image: url("../Images/rock-paper-scissors.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+     background-position: center center;
+    height:65vh;
+}
+
+/* weapon selection*/
+.weaponsWrapper{
+    margin: auto;
+    width: 463px;
+}
+.weaponsWrapper input{
+    margin:0;padding:0;
+    position:absolute;
+    z-index:1;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.weaponsWrapper input:active +.weapon
+{
+    opacity:0.9;
+    filter: alpha(opacity=90);
+}
+.weaponsWrapper input:checked +.weapon
+{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+
+.enemyCenter{
+    width:150px;
+    margin: auto;
+}
+.enemyWeapon{
+    background-size: cover;
+    background-repeat:no-repeat;
+    display:inline-block;
+    margin-top:8px;
+    width:150px;
+    height:150px;
+}
+.vs{
+    width: 66px; 
+    height: 47px;
+    margin: auto; 
+    background-image: url('../Images/vs.png');
+}
+.weapon{
+    cursor:pointer;
+    background-size: cover;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:150px;
+    height:150px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.weapon:hover{
+    -webkit-filter: brightness(1.2) opacity(.8);
+       -moz-filter: brightness(1.2) opacity(.8);
+            filter: brightness(1.2) opacity(.8);
+}
+.rock {
+    background-image: url("../Images/rock.jpg");
+}
+
+.paper {
+    background-image: url("../Images/paper.jpg");
+}
+
+.scissors {
+    background-image: url("../Images/scissors.jpg");
+}
+
+/* fight loading spinner*/
+#loader {
+  position: relative;
+  left: 50%;
+  top: 35%;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  margin: 10px 0 10px -25px;
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #8b0000;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* fight button*/
+.fightButton{
+    width:150px;
+    margin: auto;
+}
+
+/* foooter homepage link*/
+.footerLink{
+    float:right;
+}
+
+/* navbar*/
+.navbar-nav > p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.navbar-nav > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-nav > p {
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+ }
+
+.container >p >a{
+    text-decoration:none;
+}
