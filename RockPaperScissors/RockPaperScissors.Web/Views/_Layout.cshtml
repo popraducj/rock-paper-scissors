@@ -6,13 +6,16 @@
     <title ng-bind="title">@(PageData["title"] ?? "Rock Paper Scissors")</title>
     <meta name="description" content="@PageData["description"]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    @Styles.Render("~/content/css/app")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+      @Styles.Render("~/content/css/app")
 </head>
 <body>
     <!--[if lt IE 9]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    <div class="banner"></div>
     <header class="navbar navbar-inverse" role="banner" ng-if=" !layout ">@* The 'layout' property is set inside the app.run(..) method on '$stateChangeSuccess' *@
         <div class="container">
             <div class="navbar-header">
@@ -30,6 +33,11 @@
                         <a href="./about">About</a>
                     </li>
                 </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./rock-paper-scissors-inverse-game">Rock Paper Scissors Inverse</a>
+                    </li>
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="./login">Sign In</a>
@@ -43,6 +51,15 @@
         @RenderBody()
     </div>
 
+        <div class="container">
+            <hr />   
+            <p class="pull-left">
+                Copyright Rock Paper Scissors 2016. All rights reserved.
+            </p>
+            <p>
+                <a href="./" class="footerLink">Rock Paper Scissors</a>
+            </p>
+        </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
     @Scripts.Render("~/js/app")

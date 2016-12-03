@@ -14,7 +14,11 @@ namespace App.RockPaperScissors.Web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/content/css/app").Include("~/content/app.css"));
+            bundles.Add(new StyleBundle("~/content/css/app").Include(
+                "~/content/app.css",
+                "~/content/main.css",
+                "~/content/responsive.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/js/jquery").Include("~/scripts/vendor/jquery-{version}.js"));
 
@@ -32,6 +36,7 @@ namespace App.RockPaperScissors.Web
 
                 //Controllers
                 "~/scripts/Controllers/AboutController.js",
+                "~/scripts/Controllers/RockPaperScissorsInverseController.js",
                 "~/scripts/Controllers/HomeController.js"));
         }
     }

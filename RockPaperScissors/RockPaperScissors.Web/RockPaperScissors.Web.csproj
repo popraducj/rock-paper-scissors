@@ -142,9 +142,17 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jasmine\jasmine.css" />
     <Content Include="Content\jasmine\jasmine_favicon.png" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\responsive.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\variables.less" />
     <Content Include="Global.asax" />
+    <Content Include="Images\paper.jpg" />
+    <Content Include="Images\rock-paper-scissors.jpg" />
+    <Content Include="Images\rock.jpg" />
+    <Content Include="Images\scissors.jpg" />
+    <Content Include="Images\vs.png" />
+    <Content Include="Scripts\Controllers\RockPaperScissorsInverseController.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\AboutController.js" />
@@ -1308,6 +1316,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\RockPaperScissorsInverse.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1333,7 +1342,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

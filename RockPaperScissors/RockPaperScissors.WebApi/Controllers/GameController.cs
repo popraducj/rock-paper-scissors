@@ -1,4 +1,5 @@
 ﻿using RockPaperScissors.BL;
+using RockPaperScissors.WebApi.Models;
 using System;
 using System.Net;
 using System.Net.Http;
@@ -12,7 +13,7 @@ namespace RockPaperScissors.WebApi.Controllers
         //
         // GET: /Get
         [HttpGet]
-        public HttpResponseMessage battle(WeaponType selection, string gameRule = "rock-paper-scissors")
+        public HttpResponseMessage battle(WeaponType selection, string gameType = "rock-paper-scissors")
         {
             var weaponTypeLength = Enum.GetNames(typeof(WeaponType)).Length;
             if ((int)selection > weaponTypeLength)
@@ -23,8 +24,11 @@ namespace RockPaperScissors.WebApi.Controllers
 
             try
             {
-                var result = new BattleRoom(gameRule).Battle(selection, randomSelection);
-                return Request.CreateResponse(HttpStatusCode.OK, result);
+                var resultModel = new BattleResultModel(){
+                    Result = new BattleRoom(gameType).Battle(selection, randomSelection),
+                    EnemeyWeapon = randomSelection
+                };
+                return Request.CreateResponse(HttpStatusCode.OK, resultModel);
             }
             catch
             {
