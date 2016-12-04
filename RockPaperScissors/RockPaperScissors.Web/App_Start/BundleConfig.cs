@@ -33,10 +33,12 @@ namespace App.RockPaperScissors.Web
                 "~/scripts/app.js",
                 //Services
                 "~/scripts/Services/GameService.js",
+                "~/scripts/Services/AdvancedGameService.js",
 
                 //Controllers
                 "~/scripts/Controllers/AboutController.js",
                 "~/scripts/Controllers/RockPaperScissorsInverseController.js",
+                "~/scripts/Controllers/AdvancedGameController.js",
                 "~/scripts/Controllers/HomeController.js"));
         }
     }

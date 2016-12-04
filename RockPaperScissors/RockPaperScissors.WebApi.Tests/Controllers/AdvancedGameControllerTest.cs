@@ -13,14 +13,14 @@ using RockPaperScissors.WebApi.Models;
 namespace RockPaperScissors.WebApi.Tests.Controllers
 {
     [TestClass]
-    public class GameControllerTest
+    public class AdvancedGameControllerTest
     {
-        private GameController _controller ;
+        private AdvancedGameController _controller ;
 
         [TestInitialize]
         public void Initialize()
         {
-            _controller = new GameController();
+            _controller = new AdvancedGameController();
             _controller.Request = new HttpRequestMessage();
             _controller.Configuration = new HttpConfiguration();
         }
@@ -28,7 +28,7 @@ namespace RockPaperScissors.WebApi.Tests.Controllers
         [TestMethod]
         public void BattleSuccessResult()
         {
-            var battleResult = _controller.battle(WeaponType.Scissors);
+            var battleResult = _controller.battle(WeaponType.Scissors, string.Empty);
             BattleResultModel result;
             Assert.IsTrue(battleResult.TryGetContentValue<BattleResultModel>(out result));
         }
@@ -36,7 +36,7 @@ namespace RockPaperScissors.WebApi.Tests.Controllers
         [TestMethod]
         public void BattleBadRequestResult()
         {
-            var battleResult = _controller.battle(WeaponType.Scissors | WeaponType.Paper);
+            var battleResult = _controller.battle(WeaponType.Scissors | WeaponType.Paper, string.Empty);
             BattleResultModel result;
             Assert.IsFalse(battleResult.TryGetContentValue<BattleResultModel>(out result));
         }

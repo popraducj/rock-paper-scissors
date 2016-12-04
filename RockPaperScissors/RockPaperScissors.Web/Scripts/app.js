@@ -29,6 +29,12 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
                 controller: 'RockPaperScissorsInverseController'
 
             })
+            .state('advancedGame', {
+                url: '/advanced-game',
+                templateUrl: '/views/AdvancedGame',
+                controller: 'AdvancedGameController'
+
+            })
             .state('about', {
                 url: '/about',
                 templateUrl: '/views/about',

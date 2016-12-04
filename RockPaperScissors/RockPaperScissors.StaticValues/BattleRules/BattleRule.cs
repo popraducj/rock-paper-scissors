@@ -9,7 +9,7 @@ namespace RockPaperScissors.BL.BattleRules
 {
     public class BattleRule
     {
-        public List<Weapon> Weapons { get;  internal set; }
+        public Dictionary<string, double> Rules { get; internal set; }
         public string Type { get; set; }
     }
 }
