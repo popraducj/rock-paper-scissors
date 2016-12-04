@@ -28,6 +28,7 @@ namespace RockPaperScissors.BL
             {
                 throw new Exception("Not a valid battle rule");
             }
+            new DBTEst().test();
         }
 
         public BattleResult Battle(Player firstPlayer, Player secondPlayer, bool isAdvanced = false)
@@ -38,7 +39,7 @@ namespace RockPaperScissors.BL
                 throw new Exception(string.Format("Not a valid battle {0} against {1}!", firstPlayer.Weapon.Type, secondPlayer.Weapon.Type));
 
             }
-            var result = "The player {0} has Won by inflicting {1} damage while {2} have done only {3}";
+            var result = "The player {0} has Won by inflicting {1} damage while {2} has only {3}";
             var battleResult = new BattleResult();
             var firstPlayerDamage = firstPlayer.GetTotalDamage();
             var secondPlayerDamage = secondPlayer.GetTotalDamage();
