@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.BL
 {
-
-    public class BattleResult
+    public enum BattleResultType
     {
-        public string Message { get; set; }
-        public BattleResultType BattleResultType { get; set; }
+        Win,
+        Draw,
+        Lose
     }
 }

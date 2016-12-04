@@ -152,7 +152,9 @@
     <Content Include="Images\rock.jpg" />
     <Content Include="Images\scissors.jpg" />
     <Content Include="Images\vs.png" />
+    <Content Include="Scripts\Controllers\AdvancedGameController.js" />
     <Content Include="Scripts\Controllers\RockPaperScissorsInverseController.js" />
+    <Content Include="Scripts\Services\AdvancedGameService.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\AboutController.js" />
@@ -1317,6 +1319,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\RockPaperScissorsInverse.cshtml" />
+    <Content Include="Views\AdvancedGame.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

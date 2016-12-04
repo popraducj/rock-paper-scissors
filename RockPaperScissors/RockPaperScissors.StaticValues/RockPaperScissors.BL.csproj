@@ -39,16 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleResultType.cs" />
     <Compile Include="BattleRules\BattleRule.cs" />
     <Compile Include="BattleRules\RockPaperScissorsInverseBattleRule.cs" />
     <Compile Include="BattleRules\RockPaperScissorsBattleRule.cs" />
     <Compile Include="BattleResult.cs" />
     <Compile Include="BattleRoom.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="WeaponType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BattleWeapon\Paper.cs" />
-    <Compile Include="BattleWeapon\Rock.cs" />
-    <Compile Include="BattleWeapon\Scissors.cs" />
     <Compile Include="BattleWeapon\Weapon.cs" />
   </ItemGroup>
   <ItemGroup />

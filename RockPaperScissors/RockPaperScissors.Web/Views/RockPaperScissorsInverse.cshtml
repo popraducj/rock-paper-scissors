@@ -27,17 +27,9 @@
     <div class="alert alert-danger" ng-if="error">
         <strong>{{error}}</strong>
     </div>
-    <div class="alert alert-success text-center" ng-if="result.win">
+    <div class="alert alert-warning text-center" ng-if="result">
         <strong>{{result.battleResultMessage}}</strong>
     </div>
-
-    <div class="alert alert-info text-center" ng-if="result.draw">
-        <strong>{{result.battleResultMessage}}</strong>
-    </div>
-    <div class="alert alert-warning text-center" ng-if="result.lose">
-        <strong>{{result.battleResultMessage}}</strong>
-    </div>
-</div>
 <div class="fightButton">
     <button type="button" class="btn btn-default" ng-click="fight()" ng-disabled="(!weapon || isLoading)">Fight the computer</button>
 </div><br/>

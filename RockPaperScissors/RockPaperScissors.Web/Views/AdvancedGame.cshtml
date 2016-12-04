@@ -1,10 +1,19 @@
 ﻿@{
     PageData["title"] = "Rock Paper Scissors";
 }
-<h2> Rock Paper Scissors Game</h2>
-<p>Let's have a bit of fun and play this awesome game. All you need to do is to choose your weapon and start the Fight against the computer and see who's better. In case you don't know the rules of the game please visit the <a href="/about">about page</a>. 
-    We have 2 more game modes the <a href="./rock-paper-scissors-inverse-game">inverse</a> game mode or the <a href="./advanced-game"> advanced</a> game mode choose one that suite you.</a></p>
-<br/>
+<h2> Rock Paper Scissors Advanced Game</h2>
+<p>This is variation of Rock Paper Scissors clasic game for which you can find the rules here <a href="/about">about page</a>. We were thinking that if you thow a paper to Hulk which has a rock in hand most probably he will cruch you. That's why we wanted to create a more spicy game with the following rules:</p>
+<p>
+    - every player has strength between 5 and 10 <br />
+    - every weapon has damage between 1 and 5<br />
+    - the players strength multiplied by the weapon damage is the damage that can be done by the player
+    - for examnple if a player with the rock in hand figths a player with paper in hand, the first one will have only 1/4 damage to the second since paper is natural enemy to rock
+</p>
+<br /> 
+<p>In this game your name will be John Doe or insert a more specific name bellow.</p>
+<label for="username" style="font-weight:400">Your name:</label>
+<input type="text" id="username" name="username" ng-model="userName" />
+<br /><br />
 <div class="weaponsWrapper">
     <p>Choose your weapon wisely. From the bellow collection:</p>
     <input type="radio" id="rock" name="weapon" ng-model="weapon" value="rock">
@@ -20,7 +29,7 @@
         <div class="vs"></div>
     </div>
     <div ng-if="isLoading">
-       <div id="loader"></div> 
+        <div id="loader"></div>
     </div>
     <div ng-if="result.enemyWeapon" class="enemyCenter">
         <div ng-class="result.enemyWeapon" class="enemyWeapon"></div>
@@ -34,4 +43,4 @@
 </div>
 <div class="fightButton">
     <button type="button" class="btn btn-default" ng-click="fight()" ng-disabled="(!weapon || isLoading)">Fight the computer</button>
-</div><br/>
+</div><br />

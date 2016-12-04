@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RockPaperScissors.BL;
 using RockPaperScissors.BL.BattleRules;
+using RockPaperScissors.BL.BattleWeapon;
 using System;
 
 namespace RockPaperScissors.BL.Tests
@@ -8,77 +9,79 @@ namespace RockPaperScissors.BL.Tests
     [TestClass]
     public class BattleRoomTest
     {
-        private int _weaponTypeLength = 0;
-        private string _rockPaperScissors = "rock-paper-scissors"; 
-        private string _rockPaperScissorsInverse = "rock-paper-scissors-inverse";
+        private Player _playerRock;
+        private Player _playerPaper;
+        private BattleRoom _battleRoom;
+        private BattleRoom _battleRoomInvers;
+
         [TestInitialize]
         public void Initialize()
         {
-            _weaponTypeLength = Enum.GetNames(typeof(WeaponType)).Length;
+            _battleRoom = new BattleRoom("rock-paper-scissors");
+            _battleRoomInvers = new BattleRoom("rock-paper-scissors-inverse");
+            _playerRock = new Player
+            {
+                Weapon = new Weapon
+               {
+                   Type = WeaponType.Rock,
+                   Damage = 1
+               },
+                Name = "Visitor",
+                Strength = 1
+            };
+            _playerPaper = new Player
+            {
+                Weapon = new Weapon
+                {
+                    Type = WeaponType.Paper,
+                    Damage = 1
+                },
+                Name = "Visitor",
+                Strength = 1
+            };
         }
 
         [TestMethod]
         public void BattleRoomRPSWin()
         {
-            var battleRoom = new BattleRoom(_rockPaperScissors);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var ruleWeapons = new RockPaperScissorsBattleRule().Weapons;
-            var losingWeapon = ruleWeapons.Find(x => x.Weakness.IndexOf(randomWeapon) > -1);
-            var battleResult = battleRoom.Battle(randomWeapon, losingWeapon.Type);
-            Assert.AreEqual(battleResult, BattleResult.Win);
+            var battleResult = _battleRoom.Battle(_playerPaper, _playerRock);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Win);
         }
 
         [TestMethod]
         public void BattleRoomRPSLose()
         {
-
-            var battleRoom = new BattleRoom(_rockPaperScissors);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var ruleWeapons = new RockPaperScissorsBattleRule().Weapons;
-            var losingWeapon = ruleWeapons.Find(x => x.Weakness.IndexOf(randomWeapon) > -1);
-            var battleResult = battleRoom.Battle(losingWeapon.Type, randomWeapon);
-            Assert.AreEqual(battleResult, BattleResult.Lose);
+            var battleResult = _battleRoom.Battle(_playerRock, _playerPaper);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Lose);
         }
 
         [TestMethod]
-        public void BattleRoomRPSEqual()
+        public void BattleRoomRPSDraw()
         {
-            var battleRoom = new BattleRoom(_rockPaperScissors);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var battleResult = battleRoom.Battle(randomWeapon, randomWeapon);
-            Assert.AreEqual(battleResult, BattleResult.Equal);
+            var battleResult = _battleRoom.Battle(_playerRock, _playerRock);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Draw);
         }
 
         [TestMethod]
         public void BattleRoomRPSInverseWin()
         {
-            var battleRoom = new BattleRoom(_rockPaperScissorsInverse);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var ruleWeapons = new RockPaperScissorsInverseBattleRule().Weapons;
-            var losingWeapon = ruleWeapons.Find(x => x.Weakness.IndexOf(randomWeapon) > -1);
-            var battleResult = battleRoom.Battle(randomWeapon, losingWeapon.Type);
-            Assert.AreEqual(battleResult, BattleResult.Win);
+            var battleResult = _battleRoomInvers.Battle(_playerRock, _playerPaper);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Win);
         }
 
         [TestMethod]
         public void BattleRoomRPSInverseLose()
         {
-
-            var battleRoom = new BattleRoom(_rockPaperScissorsInverse);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var ruleWeapons = new RockPaperScissorsInverseBattleRule().Weapons;
-            var losingWeapon = ruleWeapons.Find(x => x.Weakness.IndexOf(randomWeapon) > -1);
-            var battleResult = battleRoom.Battle(losingWeapon.Type, randomWeapon);
-            Assert.AreEqual(battleResult, BattleResult.Lose);
+            var battleResult = _battleRoomInvers.Battle(_playerPaper, _playerRock);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Lose);
         }
 
         [TestMethod]
-        public void BattleRoomRPSInverseEqual()
+        public void BattleRoomRPSInverseDraw()
         {
-            var battleRoom = new BattleRoom(_rockPaperScissorsInverse);
-            var randomWeapon = (WeaponType)new Random().Next(_weaponTypeLength);
-            var battleResult = battleRoom.Battle(randomWeapon, randomWeapon);
-            Assert.AreEqual(battleResult, BattleResult.Equal);
+            var battleResult = _battleRoomInvers.Battle(_playerRock, _playerRock);
+            Assert.AreEqual(battleResult.BattleResultType, BattleResultType.Draw);
         }
+
     }
 }
