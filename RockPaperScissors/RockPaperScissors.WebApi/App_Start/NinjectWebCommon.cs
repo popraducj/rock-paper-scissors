@@ -12,9 +12,12 @@ namespace IOC.Web.App_Start
     using Ninject.Web.Common;
     using System.Web.Http.Dependencies;
     using Ninject.Syntax;
-    using RockPaperScissors.Data;
+    using RockPaperScissors.Data.IRepositories;
+    using RockPaperScissors.Data.Repositories;
     using RockPaperScissors.Services;
     using System.Web.Http;
+    using RockPaperScissors.Data;
+    using RockPaperScissors.WebApi.Controllers;
 
     public static class NinjectWebCommon
     {
@@ -70,8 +73,10 @@ namespace IOC.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDatabaseContext>().To<DatabaseContext>().InRequestScope();
+            kernel.Bind<IAuthRepository>().To<AuthRepository>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<AccountController>().ToSelf();
         }
     }
     // Provides a Ninject implementation of IDependencyScope

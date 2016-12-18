@@ -1,4 +1,4 @@
-﻿using RockPaperScissors.Data;
+﻿using RockPaperScissors.Data.IRepositories;
 using RockPaperScissors.DatabaseEntities.Entities;
 using System;
 using System.Collections.Generic;

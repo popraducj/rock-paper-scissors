@@ -1,4 +1,5 @@
-﻿using RockPaperScissors.DatabaseEntities;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using RockPaperScissors.DatabaseEntities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RockPaperScissors.Data
 {
-    public class DatabaseContext : DbContext, IDatabaseContext
+    public class DatabaseContext : IdentityDbContext<IdentityUser>, IDatabaseContext
     {
         public DatabaseContext()
             : base("name=RockPaperScissorsConnection")
