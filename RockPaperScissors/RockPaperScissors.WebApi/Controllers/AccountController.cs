@@ -21,7 +21,7 @@ namespace RockPaperScissors.WebApi.Controllers
             _repository = repository;
         }
 
-        [AllowAnonymous]
+        
         [Route("Register")]
         public async Task<IHttpActionResult> Register(UserModel userModel)
         {

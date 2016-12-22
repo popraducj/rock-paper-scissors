@@ -7,11 +7,10 @@ angular.module('app.services', [])
     .value('battleResult', {0 : 'win', 1:'draw', 2: 'lose'})
     .value('apiBattleResultMessage', { 0: 'You have WON, now I have another strategy in mind. Double or nothing?', 1: "This for now is a DRAW. Let's try another.", 2: 'Unfortunately you lost but I am sure you will be better next time. Game?' });
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
-angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
-
+angular.module('app', ['ui.router', 'app.controllers', 'app.services', 'angular-loading-bar', 'LocalStorageModule'])
     // Gets executed during the provider registrations and configuration phase. Only providers and constants can be
     // injected here. This is to prevent accidental instantiation of services before they have been fully configured.
-    .config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+    .config(['$stateProvider', '$locationProvider', 'cfpLoadingBarProvider', '$httpProvider', function ($stateProvider, $locationProvider, cfpLoadingBarProvider, $httpProvider) {
 
         // UI States, URL Routing & Mapping. For more info see: https://github.com/angular-ui/ui-router
         // ------------------------------------------------------------------------------------------------------------
@@ -42,9 +41,13 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
             })
             .state('login', {
                 url: '/login',
-                layout: 'basic',
                 templateUrl: '/views/login',
-                controller: 'LoginCtrl'
+                controller: 'LoginController'
+            })
+            .state('signup', {
+                url: '/signup',
+                templateUrl: '/views/signup',
+                controller: 'SignupController'
             })
             .state('otherwise', {
                 url: '*path',
@@ -52,6 +55,8 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services'])
                 controller: 'Error404Ctrl'
             });
 
+        $httpProvider.interceptors.push('authInterceptorService');
+        cfpLoadingBarProvider.includeSpinner = false;
         $locationProvider.html5Mode(true);
     }])
 

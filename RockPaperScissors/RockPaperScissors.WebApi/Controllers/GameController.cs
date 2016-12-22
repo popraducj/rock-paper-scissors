@@ -13,10 +13,10 @@ namespace RockPaperScissors.WebApi.Controllers
     {
         //
         // GET: /Get
-        [Authorize]
         [HttpGet]
         public HttpResponseMessage battle(WeaponType weaponType, string gameType = "rock-paper-scissors")
         {
+            System.Threading.Thread.Sleep(2000);
             var weaponTypeLength = Enum.GetNames(typeof(WeaponType)).Length;
             if ((int)weaponType > weaponTypeLength)
             {

@@ -13,6 +13,7 @@ namespace RockPaperScissors.WebApi.Controllers
     {
         //
         // GET: /Get
+        [Authorize]
         [HttpGet]
         public HttpResponseMessage battle(WeaponType weaponType, string playerName, string gameType = "rock-paper-scissors")
         {
