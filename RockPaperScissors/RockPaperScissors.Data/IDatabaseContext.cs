@@ -11,6 +11,7 @@ namespace RockPaperScissors.Data
     public interface IDatabaseContext : IDisposable
     {
         IDbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity;
-        int SaveChanges();        
+        int SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }

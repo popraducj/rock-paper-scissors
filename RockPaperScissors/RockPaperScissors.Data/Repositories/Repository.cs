@@ -5,6 +5,7 @@ using System.Data.Entity.Validation;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using RockPaperScissors.Data.IRepositories;
+using System.Threading.Tasks;
 
 namespace RockPaperScissors.Data.Repositories
 {
@@ -27,13 +28,13 @@ namespace RockPaperScissors.Data.Repositories
             return Entities.Find(id);
         }
 
-        public void Insert(T entity)
+        public async Task<bool> Insert(T entity)
         {
             try
             {
                 ValidateEntity(entity);
                 Entities.Add(entity);
-                _context.SaveChanges();
+                return  await _context.SaveChangesAsync() >0;
             }
             catch (DbEntityValidationException ex)
             {
@@ -41,13 +42,13 @@ namespace RockPaperScissors.Data.Repositories
             }
         }
 
-        public void Update(T entity)
+        public async Task<bool> Update(T entity)
         {
             try
             {
                 ValidateEntity(entity);
                 Entities.AddOrUpdate(entity);
-                _context.SaveChanges();
+                return await _context.SaveChangesAsync() > 0;
             }
             catch (DbEntityValidationException ex)
             {
@@ -55,13 +56,13 @@ namespace RockPaperScissors.Data.Repositories
             }
         }
 
-        public void Delete(T entity)
+        public async Task<bool> Delete(T entity)
         {
             try
             {
                 ValidateEntity(entity);
                 Entities.Remove(entity);
-                _context.SaveChanges();
+                return await _context.SaveChangesAsync() > 0;
             }
             catch (DbEntityValidationException ex)
             {
@@ -81,7 +82,7 @@ namespace RockPaperScissors.Data.Repositories
 
         #region private methods
 
-        private IDbSet<T> Entities
+        protected IDbSet<T> Entities
         {
             get
             {

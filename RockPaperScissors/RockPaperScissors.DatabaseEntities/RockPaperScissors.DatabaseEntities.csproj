@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
+    <Compile Include="Entities\ApplicationTypes.cs" />
+    <Compile Include="Entities\Client.cs" />
+    <Compile Include="Entities\RefreshToken.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Entities\UserModel.cs" />
     <Compile Include="Entities\UserProfile.cs" />

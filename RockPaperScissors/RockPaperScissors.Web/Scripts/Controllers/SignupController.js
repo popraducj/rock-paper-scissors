@@ -37,7 +37,7 @@ angular.module('app.controllers')
         var startTimer = function () {
             var timer =$timeout(function () {
                 $timeout.cancel(timer);
-                $location.path('/');
+                $location.path('/login');
             }, 2000);
         }
 

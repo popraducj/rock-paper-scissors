@@ -75,6 +75,7 @@ namespace IOC.Web.App_Start
             kernel.Bind<IDatabaseContext>().To<DatabaseContext>().InRequestScope();
             kernel.Bind<IAuthRepository>().To<AuthRepository>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>)).InRequestScope();
+            kernel.Bind(typeof(IRefreshTokenReposity<>)).To(typeof(IRefreshTokenReposity<>)).InRequestScope();
             kernel.Bind<IUserService>().To<UserService>();
             kernel.Bind<AccountController>().ToSelf();
         }

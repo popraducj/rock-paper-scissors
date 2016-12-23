@@ -34,20 +34,20 @@ namespace RockPaperScissors.Services
             return _userRepository.GetById(id);
         }
 
-        public void InsertUser(User user)
+        public async Task<bool> InsertUser(User user)
         {
-            _userRepository.Insert(user);
+            return await _userRepository.Insert(user);
         }
 
-        public void UpdateUser(User user)
+        public async Task<bool> UpdateUser(User user)
         {
-            _userRepository.Update(user);
+            return await _userRepository.Update(user);
         }
 
-        public void DeleteUser(User user)
+        public async Task<bool> DeleteUser(User user)
         {
-            _userProfileRepository.Delete(user.UserProfile);
-            _userRepository.Delete(user);
+            await _userProfileRepository.Delete(user.UserProfile);
+            return await _userRepository.Delete(user);
         }
         #endregion
     }
