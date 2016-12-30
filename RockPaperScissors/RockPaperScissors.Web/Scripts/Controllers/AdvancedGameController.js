@@ -6,8 +6,9 @@
 angular.module('app.controllers')
 
     // Path: /
-    .controller('AdvancedGameController', ['$scope', '$location', '$window', 'advancedGameService', function ($scope, $location, $window, AdvancedGameService) {
+    .controller('AdvancedGameController', ['$scope', '$location', '$window', 'advancedGameService', 'authService', function ($scope, $location, $window, AdvancedGameService, authService) {
         $scope.$root.title = 'Rock Paper Scissors';
+        $scope.authentication = authService.authentication;
         $scope.userName = "";
         $scope.fight = function () {
             $scope.isLoading = true;

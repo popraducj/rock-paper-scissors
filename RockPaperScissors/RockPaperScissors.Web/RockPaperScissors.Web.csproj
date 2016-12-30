@@ -142,6 +142,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jasmine\jasmine.css" />
     <Content Include="Content\jasmine\jasmine_favicon.png" />
+    <Content Include="Content\loading-bar.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\responsive.css" />
     <Content Include="Content\Site.css" />
@@ -152,9 +153,16 @@
     <Content Include="Images\rock.jpg" />
     <Content Include="Images\scissors.jpg" />
     <Content Include="Images\vs.png" />
+    <Content Include="Scripts\Controllers\IndexController.js" />
+    <Content Include="Scripts\Controllers\LoginController.js" />
+    <Content Include="Scripts\Controllers\SignupController.js" />
     <Content Include="Scripts\Controllers\AdvancedGameController.js" />
     <Content Include="Scripts\Controllers\RockPaperScissorsInverseController.js" />
+    <Content Include="Scripts\loading-bar.js" />
     <Content Include="Scripts\Services\AdvancedGameService.js" />
+    <Content Include="Scripts\Services\AuthInterceptorService.js" />
+    <Content Include="Scripts\Services\AuthService.js" />
+    <Content Include="Scripts\vendor\angular-local-storage.min.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />
     <Content Include="Scripts\Controllers\AboutController.js" />
@@ -1320,6 +1328,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\RockPaperScissorsInverse.cshtml" />
     <Content Include="Views\AdvancedGame.cshtml" />
+    <Content Include="Views\Signup.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1329,10 +1338,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\JasmineController.cs" />
     <Compile Include="Global.asax.cs">

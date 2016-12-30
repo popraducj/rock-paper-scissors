@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json.Serialization;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace RockPaperScissors.WebApi
 {
@@ -10,7 +13,7 @@ namespace RockPaperScissors.WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+          
 
             // Web API routes
             config.EnableCors();
@@ -21,6 +24,8 @@ namespace RockPaperScissors.WebApi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
+            jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
     }
 }

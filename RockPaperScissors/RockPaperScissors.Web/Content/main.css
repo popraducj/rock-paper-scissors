@@ -83,7 +83,7 @@
 }
 
 /* fight loading spinner*/
-#loader {
+/*#loader {
   position: relative;
   left: 50%;
   top: 35%;
@@ -108,7 +108,7 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
+}*/
 
 /* fight button*/
 .fightButton{
@@ -142,4 +142,8 @@
 
 .container >p >a{
     text-decoration:none;
+}
+
+.form-login .row  {
+    padding-bottom: 10px;
 }

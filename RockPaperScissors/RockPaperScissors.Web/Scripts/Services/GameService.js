@@ -10,8 +10,8 @@ angular.module('app.services')
                method: "GET"
            }).success(function (data) {
                var result = {
-                   battleResultMessage: data.Result.Message,
-                   enemyWeapon: battleWeapons[data.EnemeyWeapon]
+                   battleResultMessage: data.result.message,
+                   enemyWeapon: battleWeapons[data.enemeyWeapon]
                };               
                deferred.resolve(result);
            }).error(function (data, status, headers, config) {
