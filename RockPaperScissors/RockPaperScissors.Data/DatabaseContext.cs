@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using RockPaperScissors.DatabaseEntities;
+using RockPaperScissors.DatabaseEntities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -38,5 +39,8 @@ namespace RockPaperScissors.Data
         {
             return base.Set<TEntity>();
         }
+
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
     }
 }

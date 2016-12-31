@@ -80,4 +80,5 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services', 'angular-
             $rootScope.layout = toState.layout;
         });
     }])
-    .value('baseUrl', 'http://api.rock-paper-scissors.org/api/');
+    .value('baseUrl', 'http://api.rock-paper-scissors.org/api/')
+    .value('clientId', 'ngAuthApp');

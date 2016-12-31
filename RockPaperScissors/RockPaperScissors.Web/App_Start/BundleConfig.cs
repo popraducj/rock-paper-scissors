@@ -36,6 +36,7 @@ namespace App.RockPaperScissors.Web
                 "~/scripts/app.js",
 
                 //Services
+                "~/scripts/Services/RememberMeService.js",
                 "~/scripts/Services/AuthInterceptorService.js",
                 "~/scripts/Services/AuthService.js",
                 "~/scripts/Services/GameService.js",

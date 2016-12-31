@@ -226,8 +226,10 @@
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Models\BattleResult.cs" />
-    <Compile Include="SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
+    <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -301,6 +303,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RockPaperScissors.Common\RockPaperScissors.Common.csproj">
+      <Project>{97f6f902-188f-49de-82b4-429408c470e9}</Project>
+      <Name>RockPaperScissors.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RockPaperScissors.DatabaseEntities\RockPaperScissors.DatabaseEntities.csproj">
       <Project>{f260260d-dd50-493f-97de-4a33d69e63b4}</Project>
       <Name>RockPaperScissors.DatabaseEntities</Name>
