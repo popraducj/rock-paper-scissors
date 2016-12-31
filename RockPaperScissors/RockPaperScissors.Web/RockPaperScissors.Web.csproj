@@ -162,6 +162,7 @@
     <Content Include="Scripts\Services\AdvancedGameService.js" />
     <Content Include="Scripts\Services\AuthInterceptorService.js" />
     <Content Include="Scripts\Services\AuthService.js" />
+    <Content Include="Scripts\Services\RememberMeService.js" />
     <Content Include="Scripts\vendor\angular-local-storage.min.js" />
     <Content Include="Scripts\vendor\bootstrap.js" />
     <Content Include="Scripts\vendor\bootstrap.min.js" />

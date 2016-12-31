@@ -1,10 +1,12 @@
 ﻿'use strict'
-angular.module('app.services').factory('authService', ['$http', '$q', 'localStorageService', 'baseUrl', function ($http, $q, localStorageService, baseUrl) {
+angular.module('app.services').factory('authService', ['$http', '$q', 'localStorageService', 'baseUrl', 'clientId', function ($http, $q, localStorageService, baseUrl, clientId) {
     var authServiceFactory = {};
 
     var _authentication = {
         isAuth: false,
-        userName: ""
+        userName: "",
+        rememberMe: false,
+        expireDate : new Date()
     };
 
     var _saveRegistration = function (registration) {
@@ -17,13 +19,23 @@ angular.module('app.services').factory('authService', ['$http', '$q', 'localStor
 
     var _login = function (loginData) {
 
-        var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
-        var deferred = $q.defer();
+        var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password,
+            deferred = $q.defer();
+
+        if (loginData.rememberMe) {
+            data = data + "&client_id=" + clientId;
+        }
 
         $http.post(baseUrl + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
             _authentication.isAuth = true;
             _authentication.userName = loginData.userName;
             _authentication.token = response.access_token;
+            _authentication.rememberMe = loginData.rememberMe;
+            _authentication.expireDate = new Date( new Date().getTime() + response.expires_in*(-1000))
+
+            if (loginData.rememberMe) {
+                _authentication.refreshToken = response.refresh_token;
+            }
             localStorageService.set('authorizationData', _authentication)
             deferred.resolve(response);
 
@@ -51,11 +63,45 @@ angular.module('app.services').factory('authService', ['$http', '$q', 'localStor
         }
     }
 
+    var _refreshToken = function () {
+        var deferred = $q.defer();
+
+        var authData = localStorageService.get('authorizationData');
+
+        if (authData && authData.rememberMe) {
+            var data = "grant_type=refresh_token&refresh_token=" + authData.refreshToken + "&client_id=" + clientId;
+
+            localStorageService.remove('authorizationData');
+
+            $http.post(baseUrl + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
+                _authentication.isAuth = true;
+                _authentication.userName = response.userName;
+                _authentication.token = response.access_token;
+                _authentication.rememberMe = true;
+                _authentication.expireDate = new Date(new Date().getTime() + response.expires_in * 1000)
+                _authentication.refreshToken = response.refresh_token;
+
+                localStorageService.set('authorizationData', _authentication)
+                deferred.resolve(response);
+
+            }).error(function (err, status) {
+                _logOut();
+                deferred.reject(err);
+            });
+        } else {
+            _logOut();
+            deferred.reject();
+        }
+
+        return deferred.promise;
+    };
+
     authServiceFactory.saveRegistration = _saveRegistration;
     authServiceFactory.login = _login;
     authServiceFactory.logOut = _logOut;
     authServiceFactory.fillAuthData = -_fillAuthData;
     authServiceFactory.authentication = _authentication;
+    authServiceFactory.refreshToken = _refreshToken;
 
     return authServiceFactory;
 

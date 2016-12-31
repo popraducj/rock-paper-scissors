@@ -9,8 +9,9 @@ angular.module('app.controllers')
     .controller('LoginController', ['$scope', '$location', '$window', 'authService', function ($scope, $location, $window,  authService) {
         $scope.$root.title = 'Rock Paper Scissors - Login';
         $scope.loginData = {
-            userName: '',
-            password: ''
+            userName: 'radupop',
+            password: '123456',
+            rememberMe: true
         };
 
         $scope.message = '';
