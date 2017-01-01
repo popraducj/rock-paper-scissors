@@ -7,7 +7,7 @@ angular.module('app.services', [])
     .value('battleResult', {0 : 'win', 1:'draw', 2: 'lose'})
     .value('apiBattleResultMessage', { 0: 'You have WON, now I have another strategy in mind. Double or nothing?', 1: "This for now is a DRAW. Let's try another.", 2: 'Unfortunately you lost but I am sure you will be better next time. Game?' });
 // Declares how the application should be bootstrapped. See: http://docs.angularjs.org/guide/module
-angular.module('app', ['ui.router', 'app.controllers', 'app.services', 'angular-loading-bar', 'LocalStorageModule'])
+angular.module('app', ['ngRoute', 'ui.router', 'app.controllers', 'app.services', 'angular-loading-bar', 'LocalStorageModule'])
     // Gets executed during the provider registrations and configuration phase. Only providers and constants can be
     // injected here. This is to prevent accidental instantiation of services before they have been fully configured.
     .config(['$stateProvider', '$locationProvider', 'cfpLoadingBarProvider', '$httpProvider', function ($stateProvider, $locationProvider, cfpLoadingBarProvider, $httpProvider) {
@@ -62,7 +62,7 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services', 'angular-
 
     // Gets executed after the injector is created and are used to kickstart the application. Only instances and constants
     // can be injected here. This is to prevent further system configuration during application run time.
-    .run(['$templateCache', '$rootScope', '$state', '$stateParams', function ($templateCache, $rootScope, $state, $stateParams) {
+    .run(['$templateCache', '$rootScope', '$state', '$stateParams', '$location', 'authService', function ($templateCache, $rootScope, $state, $stateParams, $location, authService) {
        
         // <ui-view> contains a pre-rendered template for the current view
         // caching it will prevent a round-trip to a server at the first page load
@@ -72,6 +72,12 @@ angular.module('app', ['ui.router', 'app.controllers', 'app.services', 'angular-
         // Allows to retrieve UI Router state information from inside templates
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.$on('$locationChangeStart', function (event) {
+            if (!authService.authentication.isAuth) {
+                $location.path('/login');
+            }
+        });
 
         $rootScope.$on('$stateChangeSuccess', function (event, toState) {
 
