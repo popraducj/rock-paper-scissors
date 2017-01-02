@@ -27,6 +27,7 @@ namespace App.RockPaperScissors.Web
 
 
                 "~/scripts/vendor/angular-ui-router.js",
+                "~/scripts/vendor/angular-route.js",
                 "~/scripts/filters.js",
                 "~/scripts/services.js",
                 "~/scripts/vendor/angular-local-storage.min.js",
@@ -36,7 +37,6 @@ namespace App.RockPaperScissors.Web
                 "~/scripts/app.js",
 
                 //Services
-                "~/scripts/Services/RememberMeService.js",
                 "~/scripts/Services/AuthInterceptorService.js",
                 "~/scripts/Services/AuthService.js",
                 "~/scripts/Services/GameService.js",

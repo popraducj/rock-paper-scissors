@@ -31,12 +31,11 @@ angular.module('app.services').factory('authService', ['$http', '$q', 'localStor
             _authentication.userName = loginData.userName;
             _authentication.token = response.access_token;
             _authentication.rememberMe = loginData.rememberMe;
-            _authentication.expireDate = new Date( new Date().getTime() + response.expires_in*(-1000))
 
             if (loginData.rememberMe) {
                 _authentication.refreshToken = response.refresh_token;
             }
-            localStorageService.set('authorizationData', _authentication)
+            localStorageService.set('authorizationData', _authentication);
             deferred.resolve(response);
 
         }).error(function (err) {
@@ -78,10 +77,9 @@ angular.module('app.services').factory('authService', ['$http', '$q', 'localStor
                 _authentication.userName = response.userName;
                 _authentication.token = response.access_token;
                 _authentication.rememberMe = true;
-                _authentication.expireDate = new Date(new Date().getTime() + response.expires_in * 1000)
                 _authentication.refreshToken = response.refresh_token;
 
-                localStorageService.set('authorizationData', _authentication)
+                localStorageService.set('authorizationData', _authentication);
                 deferred.resolve(response);
 
             }).error(function (err, status) {
