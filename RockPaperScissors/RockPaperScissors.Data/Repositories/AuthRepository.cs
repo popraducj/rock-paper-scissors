@@ -95,6 +95,27 @@ namespace RockPaperScissors.Data.Repositories
             return _context.RefreshTokens.ToList();
         }
 
+        public async Task<IdentityUser> FindAsync(UserLoginInfo loginInfo)
+        {
+            IdentityUser user = await _userManager.FindAsync(loginInfo);
+
+            return user;
+        }
+
+        public async Task<IdentityResult> CreateAsync(IdentityUser user)
+        {
+            var result = await _userManager.CreateAsync(user);
+
+            return result;
+        }
+
+        public async Task<IdentityResult> AddLoginAsync(string userId, UserLoginInfo login)
+        {
+            var result = await _userManager.AddLoginAsync(userId, login);
+
+            return result;
+        }
+
         public void Dispose()
         {
             _context.Dispose();
