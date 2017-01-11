@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="authComplete.html" />
     <Content Include="Content\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
@@ -153,6 +154,7 @@
     <Content Include="Images\rock.jpg" />
     <Content Include="Images\scissors.jpg" />
     <Content Include="Images\vs.png" />
+    <Content Include="Scripts\authComplete.js" />
     <Content Include="Scripts\Controllers\IndexController.js" />
     <Content Include="Scripts\Controllers\LoginController.js" />
     <Content Include="Scripts\Controllers\SignupController.js" />

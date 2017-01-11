@@ -57,8 +57,8 @@ namespace RockPaperScissors.WebApi
 
             FacebookAuthOptions = new FacebookAuthenticationOptions()
             {
-                AppId = "170123350020065",
-                AppSecret = "5e9684a5c3704baf82a1b7349027300c",
+                AppId = "783277648494595",
+                AppSecret = "9c9c7b783237f28510e3f339469108a6",
                 Provider = new FacebookAuthProvider()
             };
 
